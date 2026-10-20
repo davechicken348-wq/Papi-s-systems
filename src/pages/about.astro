@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceIcon from '../components/ServiceIcon.astro';
+---
+
+<BaseLayout title="About | Papi's Systems" description="Meet Papi's Systems: a practical, people-first technology partner for growing businesses.">
+  <Header active="/about" />
+  <main class="about-page">
+    <section class="about-intro wrap">
+      <div class="about-intro-meta"><p class="eyebrow"><span class="eyebrow-dot"></span> A little about us</p><span>ABIDJAN / ONLINE</span></div>
+      <div class="about-intro-grid">
+        <div class="about-intro-copy">
+          <h1>Good tech.<br />Good people.<br /><em>Better work.</em></h1>
+          <p>We're Papi's Systems, a technology partner for people building something that matters. We make the complicated feel clear, then help make the right next step happen.</p>
+          <div class="about-intro-actions"><a class="button" href="/contact">Come say hello <span aria-hidden="true">↗</span></a><a class="text-link" href="/services">See how we help <span aria-hidden="true">→</span></a></div>
+        </div>
+        <div class="about-intro-visual">
+          <img src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Black developers collaborating around laptops in Lagos" fetchpriority="high" />
+          <span class="about-image-tag">TECHNOLOGY, WITH PEOPLE IN MIND</span>
+          <span class="about-orbit about-orbit-one" aria-hidden="true"></span><span class="about-orbit about-orbit-two" aria-hidden="true"></span>
+          <span class="about-visual-index">PS / 01</span>
+        </div>
+      </div>
+      <div class="about-promise"><span>NO TECH FOR TECH'S SAKE</span><span class="about-promise-line"></span><span>JUST THOUGHTFUL WORK THAT MOVES YOU FORWARD</span></div>
+    </section>
+
+    <section class="about-ceo wrap" aria-labelledby="about-ceo-title">
+      <div class="about-ceo-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> The person behind Papi's Systems</p>
+        <h2 id="about-ceo-title">Meet our<br /><em>CEO.</em></h2>
+        <p>Papi's Systems is built on a simple idea: technology works best when people feel understood. Our CEO brings that people-first approach to every conversation, helping businesses find clear, practical ways forward.</p>
+        <span class="about-ceo-role">CHIEF EXECUTIVE OFFICER <i></i> PAPI'S SYSTEMS</span>
+      </div>
+      <div class="about-ceo-gallery" aria-label="Portraits of the CEO of Papi's Systems">
+        <figure class="about-ceo-portrait about-ceo-portrait-primary"><img src="/images/ceo.png" alt="CEO of Papi's Systems seated in a navy suit" loading="lazy" /><figcaption>01 / LEAD WITH PURPOSE</figcaption></figure>
+        <figure class="about-ceo-portrait about-ceo-portrait-secondary"><img src="/images/ceo3.png" alt="CEO of Papi's Systems in a second portrait" loading="lazy" /><figcaption>02 / STAY HUMAN</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="about-people wrap">
+      <div class="about-section-heading"><div><p class="eyebrow">A good partnership changes the day</p><h2>We're here for the<br /><em>work behind the work.</em></h2></div><p>Better systems aren't just about the tools. They're about giving people less to worry about and more room to do what they do best.</p></div>
+      <div class="about-image-grid">
+        <article class="about-image-card about-image-card-tall"><img src="https://images.unsplash.com/photo-1573167101669-476636b96cea?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Black women working together around a laptop" loading="lazy" /><span class="about-image-number">01 / LISTEN</span><p>Start with people,<br />not a product list.</p></article>
+        <article class="about-image-card about-image-card-offset"><img src="https://images.unsplash.com/photo-1653566031486-dc4ead13a35d?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Black technology professionals collaborating around a table" loading="lazy" /><span class="about-image-number">02 / MAKE IT CLEAR</span><p>Turn tangled tech<br />into a clear plan.</p></article>
+        <article class="about-image-card about-image-card-tall"><img src="https://images.unsplash.com/photo-1653566031535-bcf33e1c2893?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Black IT professionals sharing ideas around a laptop" loading="lazy" /><span class="about-image-number">03 / STAY CLOSE</span><p>Keep showing up<br />as things grow.</p></article>
+      </div>
+    </section>
+
+    <section class="about-marquee" aria-label="Build, develop, and support">
+      <img class="about-marquee-portrait" src="https://images.unsplash.com/photo-1642257859842-c95f9fa8121d?auto=format&amp;fit=crop&amp;w=1800&amp;h=1000&amp;q=85" alt="" loading="lazy" aria-hidden="true" />
+      <div class="about-marquee-wash" aria-hidden="true"></div>
+      <div class="about-marquee-frame">
+        <div class="about-marquee-top" aria-hidden="true"><span>PS / PEOPLE FIRST</span><span>PAPI'S SYSTEMS</span><span>ABIDJAN · ONLINE</span></div>
+        <div class="about-marquee-window" aria-hidden="true"><div class="about-marquee-track"><span>BUILD</span><i>✦</i><span>DEVELOP</span><i>✦</i><span>SUPPORT</span><i>✦</i><span>BUILD</span><i>✦</i><span>DEVELOP</span><i>✦</i><span>SUPPORT</span><i>✦</i></div></div>
+        <div class="about-marquee-bottom" aria-hidden="true"><span>GOOD TECHNOLOGY. GOOD PEOPLE.</span><span>MAKE THE NEXT STEP POSSIBLE.</span><span>01 — 03 / OUR APPROACH</span></div>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <div class="wrap">
+        <div class="about-section-heading about-values-heading"><div><p class="eyebrow">What we believe</p><h2>Good technology<br />should feel <em>human.</em></h2></div><p>Our approach is simple. Understand the real need, find a sensible way forward, and make sure the people using it feel supported.</p></div>
+        <div class="values-grid">
+          <article><span class="value-number">01</span><span class="value-icon"><ServiceIcon type="systems" /></span><h3>Make it make sense</h3><p>Clear advice, plain language, and solutions chosen for your actual day-to-day.</p><span class="value-arrow" aria-hidden="true">↗</span></article>
+          <article><span class="value-number">02</span><span class="value-icon"><ServiceIcon type="workflow" /></span><h3>Build with purpose</h3><p>Connect the right tools and build a foundation that can move with your business.</p><span class="value-arrow" aria-hidden="true">↗</span></article>
+          <article><span class="value-number">03</span><span class="value-icon"><ServiceIcon type="support" /></span><h3>Stay in your corner</h3><p>Technology keeps changing. A thoughtful partner helps you keep your footing.</p><span class="value-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-faq wrap">
+      <div class="about-faq-intro"><p class="eyebrow">A few good questions</p><h2>Before we<br /><em>get started.</em></h2><p>Every business is different. Here are a few ways to begin the conversation.</p><a class="text-link" href="/contact">Ask us something else <span aria-hidden="true">→</span></a></div>
+      <div class="about-faq-list">
+        <details open><summary>Who do you work with?<span>+</span></summary><p>We work with growing businesses and teams who want their technology to be more useful, dependable, and easier to manage.</p></details>
+        <details><summary>Can you help with systems we already use?<span>+</span></summary><p>Yes. We can start by understanding what you have, what is working, and where the friction is before recommending a next step.</p></details>
+        <details><summary>Do you offer ongoing support?<span>+</span></summary><p>Ongoing support is available where it fits the needs and scope of the work. We can talk through what kind of help would be useful for your team.</p></details>
+        <details><summary>Where are you based?<span>+</span></summary><p>Papi's Systems is based in Abidjan and works with businesses wherever they are. Get in touch and tell us what you need.</p></details>
+        <details><summary>What's the best way to start?<span>+</span></summary><p>Send us a note about the challenge you are facing. We will take it from there and help you figure out a practical next step.</p></details>
+      </div>
+    </section>
+
+    <section class="about-manifesto wrap">
+      <span class="manifesto-star" aria-hidden="true">✳</span>
+      <p class="eyebrow">Our point of view</p>
+      <blockquote>“Technology should make the next step feel <em>possible.</em>”</blockquote>
+      <p class="manifesto-credit">THE PAPI'S SYSTEMS WAY</p>
+      <a class="button button-light" href="/contact">Let's build something useful <span aria-hidden="true">↗</span></a>
+      <span class="manifesto-orbit" aria-hidden="true"></span>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

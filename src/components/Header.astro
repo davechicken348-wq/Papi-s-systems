@@ -1,0 +1,77 @@
+---
+const { active = '', dark = false } = Astro.props;
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Our work' },
+  { href: '/about', label: 'About' },
+];
+---
+<header class:list={['site-header wrap', { 'is-dark': dark }]}>
+  <a class="brand" href="/" aria-label="Papi's Systems home">
+    <span class="brand-emblem"><img class="brand-symbol logo-on-light" src="/images/papis-mark-dark.png" alt="" /><img class="brand-symbol logo-on-dark" src="/images/papis-mark.png" alt="" /></span>
+    <span class="brand-wordmark-wrap"><img class="brand-wordmark logo-on-light" src="/images/papis-wordmark-dark.png" alt="" /><img class="brand-wordmark logo-on-dark" src="/images/papis-wordmark.png" alt="" /></span>
+  </a>
+  <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+    {links.map((link) => <a class:list={{ active: active === link.href }} aria-current={active === link.href ? 'page' : undefined} href={link.href}>{link.label}<span class="nav-indicator" aria-hidden="true">↗</span></a>)}
+  </nav>
+  <div class="nav-meta"><a class="contact-link" href="/contact" aria-current={active === '/contact' ? 'page' : undefined}>Let's talk <span aria-hidden="true">↗</span></a></div>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span></button>
+</header>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.site-header').forEach((header) => {
+    const toggle = header.querySelector<HTMLButtonElement>('.menu-toggle');
+    const nav = header.querySelector<HTMLElement>('.primary-nav');
+    if (!toggle || !nav) return;
+
+    requestAnimationFrame(() => {
+      header.classList.toggle('brand-compact', Math.random() < 0.5);
+    });
+
+    let releaseTimer: number | undefined;
+    const releaseHeader = () => {
+      header.classList.remove('is-stuck', 'is-returning', 'first-stick');
+      releaseTimer = undefined;
+    };
+
+    const syncStickyHeader = () => {
+      const shouldStick = window.scrollY > 96;
+      if (header.classList.contains('is-returning') && window.scrollY > 0) {
+        if (releaseTimer !== undefined) window.clearTimeout(releaseTimer);
+        releaseHeader();
+      }
+      if (shouldStick && !header.classList.contains('is-stuck')) {
+        header.classList.add('is-stuck');
+        header.classList.add('first-stick');
+      } else if (window.scrollY <= 0 && header.classList.contains('is-stuck') && !header.classList.contains('is-returning')) {
+        header.classList.remove('first-stick');
+        header.classList.add('is-returning');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          releaseHeader();
+        } else {
+          releaseTimer = window.setTimeout(releaseHeader, 460);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', syncStickyHeader, { passive: true });
+    syncStickyHeader();
+
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
+      header.classList.remove('menu-open');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      header.classList.toggle('menu-open', isOpen);
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+  });
+</script>

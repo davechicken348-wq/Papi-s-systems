@@ -1,0 +1,178 @@
+---
+const slides = [
+  {
+    layout: 'circles',
+    label: 'IT FOUNDATIONS',
+    title: ['SYSTEMS THAT', 'MOVE BUSINESS', 'FORWARD'],
+    description: 'Technology foundations built around the way your business works.',
+    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1200&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Server racks in a data center',
+    detail: 'IT / 01',
+  },
+  {
+    layout: 'metrics',
+    label: 'CONNECTED WORKFLOWS',
+    title: ['MAKE EVERY', 'PART WORK', 'TOGETHER'],
+    description: 'Bring tools and workflows together so work can move with less friction.',
+    image: 'https://images.unsplash.com/photo-1759143545924-0ea00615a054?auto=format&fit=crop&w=1200&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Two colleagues collaborating around a laptop',
+    detail: 'WORKFLOW / 02',
+  },
+  {
+    layout: 'orbit',
+    label: 'SECURITY & RELIABILITY',
+    title: ['ROOTED IN', 'TRUST. READY', 'FOR CHANGE.'],
+    description: 'Make considered technology choices with security and reliability in mind.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Close-up of an electronic circuit board',
+    detail: 'SECURITY / 03',
+  },
+  {
+    layout: 'color',
+    label: 'HUMAN SUPPORT',
+    title: ['MAKE WORK', 'FLOW BETTER', 'TOGETHER'],
+    description: 'Clear, practical help for the people who rely on your systems every day.',
+    image: 'https://images.unsplash.com/photo-1637855193741-56c0c01b1537?auto=format&fit=crop&w=1200&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Colleagues working together at computers',
+    detail: 'SUPPORT / 04',
+  },
+  {
+    layout: 'event',
+    label: 'TECHNOLOGY THAT SHOWS UP',
+    title: ['DEPENDABLE', 'SYSTEMS. LESS', 'DOWNTIME.'],
+    description: 'A steady technology partner for the moments that matter.',
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=2000&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Audience gathered at a conference',
+    detail: 'RELIABILITY / 05',
+  },
+  {
+    layout: 'portrait',
+    label: 'PEOPLE BEHIND THE SYSTEMS',
+    title: ['TECHNOLOGY', 'WITH PEOPLE', 'IN MIND'],
+    description: 'We make technology easier to use, understand, and rely on.',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Portrait of a professional in a modern setting',
+    detail: 'PEOPLE / 06',
+  },
+  {
+    layout: 'warm',
+    label: 'A CLEARER WAY FORWARD',
+    title: ['GROW YOUR', 'BUSINESS WITH', 'CONFIDENCE'],
+    description: 'Practical advice and systems that can grow with your ambitions.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Business analytics displayed on a computer screen',
+    detail: 'GROWTH / 07',
+  },
+];
+---
+<section class="hero hero-carousel" data-carousel data-theme="circles" role="region" aria-roledescription="carousel" aria-label="Papi's Systems services">
+  {slides.map((slide, index) => (
+    <article class:list={['hero-slide', { 'is-active': index === 0 }]} data-slide={index} data-layout={slide.layout} aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${slide.label}`} aria-hidden={index !== 0}>
+      <div class={`slide-visual visual-${slide.layout}`} aria-hidden="true">
+        <div class="slide-image slide-image-main"><img src={slide.image} alt="" fetchpriority={index === 0 ? 'high' : 'auto'} loading={index === 0 ? 'eager' : 'lazy'} /></div>
+        <div class="slide-image slide-image-detail"><img src={slide.detailImage} alt="" loading="lazy" /></div>
+        {slide.layout === 'orbit' && <div class="orbit-art"><i></i><i></i><i></i></div>}
+        {slide.layout === 'color' && <div class="color-panels"><span></span><span></span><span></span></div>}
+        {slide.layout === 'metrics' && <div class="slide-facts"><span>01 <b>PLAN</b></span><span>02 <b>CONNECT</b></span><span>03 <b>SUPPORT</b></span></div>}
+        <span class="visual-coordinate">A&nbsp; 00 — 0{index + 1}</span>
+        <span class="visual-mark" aria-hidden="true">✳</span>
+      </div>
+      <div class:list={['slide-copy wrap', `copy-${slide.layout}`]}>
+        <span class="slide-number">{index + 1}</span>
+        <div class="slide-heading">
+          <p class="slide-label">{slide.label}</p>
+          {index === 0 ? <h1>{slide.title.map((line) => <span>{line}</span>)}</h1> : <h2>{slide.title.map((line) => <span>{line}</span>)}</h2>}
+          <p class="slide-description">{slide.description}</p>
+          <a class="slide-link" href="/services">Explore our services <span aria-hidden="true">↗</span></a>
+        </div>
+        <span class="slide-detail">{slide.detail}<br />PAPI'S SYSTEMS</span>
+      </div>
+    </article>
+  ))}
+
+  <div class="carousel-footer wrap">
+    <span class="carousel-caption">PRACTICAL TECHNOLOGY. CLEAR WAY FORWARD.</span>
+    <div class="carousel-progress" aria-hidden="true"><span data-carousel-progress></span></div>
+    <div class="carousel-actions"><button type="button" data-carousel-prev aria-label="Previous slide">←</button><span data-carousel-count aria-live="polite">01 / 07</span><button type="button" data-carousel-next aria-label="Next slide">→</button><button class="carousel-play" type="button" data-carousel-toggle aria-label="Pause slideshow" aria-pressed="false">Ⅱ</button></div>
+  </div>
+</section>
+
+<script>
+  const carousel = document.querySelector<HTMLElement>('[data-carousel]');
+
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll<HTMLElement>('[data-slide]'));
+    const count = carousel.querySelector<HTMLElement>('[data-carousel-count]');
+    const progress = carousel.querySelector<HTMLElement>('[data-carousel-progress]');
+    const toggle = carousel.querySelector<HTMLButtonElement>('[data-carousel-toggle]');
+    let activeIndex = 0;
+    let paused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let interval: number | undefined;
+
+    const showSlide = (index: number) => {
+      activeIndex = (index + slides.length) % slides.length;
+      carousel.dataset.theme = slides[activeIndex].dataset.layout || 'circles';
+      document.documentElement.dataset.heroTheme = slides[activeIndex].dataset.layout || 'circles';
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === activeIndex;
+        slide.classList.toggle('is-active', active);
+        slide.setAttribute('aria-hidden', String(!active));
+      });
+      if (count) count.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      if (progress) {
+        progress.style.width = `${((activeIndex + 1) / slides.length) * 100}%`;
+        progress.dataset.carouselProgress = String(activeIndex);
+      }
+    };
+
+    const stopTimer = () => {
+      if (interval !== undefined) window.clearInterval(interval);
+      interval = undefined;
+    };
+
+    const startTimer = () => {
+      stopTimer();
+      if (!paused) {
+        if (progress) {
+          progress.style.transition = 'none';
+          progress.style.width = '0%';
+          requestAnimationFrame(() => {
+            progress.style.transition = 'width 6000ms linear';
+            progress.style.width = '100%';
+          });
+        }
+        interval = window.setInterval(() => {
+          showSlide(activeIndex + 1);
+          startTimer();
+        }, 6000);
+      }
+    };
+
+    carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => { showSlide(activeIndex - 1); startTimer(); });
+    carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => { showSlide(activeIndex + 1); startTimer(); });
+    toggle?.addEventListener('click', () => {
+      paused = !paused;
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+      toggle.textContent = paused ? '▶' : 'Ⅱ';
+      startTimer();
+    });
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') { showSlide(activeIndex + 1); startTimer(); }
+      if (event.key === 'ArrowLeft') { showSlide(activeIndex - 1); startTimer(); }
+    });
+    carousel.addEventListener('focusin', stopTimer);
+    carousel.addEventListener('focusout', (event) => {
+      if (!carousel.contains(event.relatedTarget as Node | null)) startTimer();
+    });
+    showSlide(0);
+    startTimer();
+  }
+</script>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Contact | Papi's Systems" description="Talk with Papi's Systems about websites, software, business technology, and IT support.">
+  <Header active="/contact" />
+  <main class="contact-page">
+    <section class="contact-intro wrap">
+      <div class="contact-intro-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> LET'S MAKE THE NEXT STEP CLEAR</p>
+        <h1>Let's get<br />something<br /><em>moving.</em></h1>
+        <p>Have a question, a challenge, or an idea you want to explore? Tell us what's on your mind. We'll help you work out a practical next step.</p>
+        <a class="contact-scroll-link" href="#contact-start">START A CONVERSATION <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="contact-intro-portrait">
+        <div class="contact-portrait-orbit" aria-hidden="true"></div>
+        <img src="/images/ceo3.png" alt="Papi's Systems CEO, ready to hear about your project" fetchpriority="high" />
+        <span class="contact-portrait-label"><i></i> A REAL PERSON, READY TO HELP</span>
+        <span class="contact-portrait-code">PS / CONNECT</span>
+      </div>
+      <div class="contact-intro-foot"><span>WEBSITE · SOFTWARE · SYSTEMS · SUPPORT</span><span>GHANA / ONLINE</span></div>
+    </section>
+
+    <section class="contact-content wrap" id="contact-start">
+      <aside class="contact-aside">
+        <p class="eyebrow">A GOOD PLACE TO START</p>
+        <h2>Tell us what's<br />on your <em>mind.</em></h2>
+        <p>Give us a little context and we’ll get back to you. Prefer a direct message? Reach us using either contact below.</p>
+        <div class="contact-methods">
+          <a class="contact-method" href="mailto:princeyetra@gmail.com"><span class="contact-method-icon" aria-hidden="true">@</span><span><small>EMAIL</small><strong>princeyetra@gmail.com</strong></span><b aria-hidden="true">↗</b></a>
+          <a class="contact-method" href="tel:+233503577164"><span class="contact-method-icon" aria-hidden="true">↗</span><span><small>CALL</small><strong>050 357 7164</strong></span><b aria-hidden="true">↗</b></a>
+        </div>
+        <div class="contact-response-note"><span class="contact-status-dot"></span><p><strong>From first question to next step.</strong><br />Tell us what you need. We’ll take it from there.</p></div>
+      </aside>
+
+      <form class="contact-form" action="mailto:princeyetra@gmail.com" method="post" enctype="text/plain">
+        <div class="contact-form-heading"><span>01 — YOUR MESSAGE</span><span>ALL FIELDS MARKED * ARE REQUIRED</span></div>
+        <label>Your name <b>*</b><input name="name" autocomplete="name" required placeholder="How should we address you?" /></label>
+        <label>Email address <b>*</b><input type="email" name="email" autocomplete="email" required placeholder="you@company.com" /></label>
+        <label>What do you need help with?<b>*</b><select name="topic" required><option value="" disabled selected>Choose a service</option><option>Website or mobile app</option><option>Software and business systems</option><option>Cloud and networking</option><option>Cybersecurity or IT support</option><option>I'm still figuring it out</option></select></label>
+        <label>Tell us a little more <b>*</b><textarea name="message" rows="4" required placeholder="What are you hoping to make easier?"></textarea></label>
+        <div class="contact-submit-row"><button class="button" type="submit">Send your enquiry <span aria-hidden="true">↗</span></button><p class="form-note">Your email app will open with your message ready to send.</p></div>
+      </form>
+    </section>
+
+    <section class="contact-bottom wrap"><span>NO PRESSURE. NO JARGON.</span><p>Just a useful conversation about what could work for you.</p><a href="/services">Explore our services <span aria-hidden="true">→</span></a></section>
+  </main>
+  <Footer />
+</BaseLayout>
