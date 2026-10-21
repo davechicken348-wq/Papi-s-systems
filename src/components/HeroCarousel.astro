@@ -2,29 +2,29 @@
 const slides = [
   {
     layout: 'circles',
-    label: 'IT FOUNDATIONS',
-    title: ['SYSTEMS THAT', 'MOVE BUSINESS', 'FORWARD'],
-    description: 'Technology foundations built around the way your business works.',
-    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1200&q=85',
+    label: 'PAPI’S SYSTEMS',
+    title: ['Technology that', 'moves business forward'],
+    description: 'Practical systems and dependable support to help your people work with confidence.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=85',
     detailImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=85',
-    imageAlt: 'Server racks in a data center',
-    detail: 'IT / 01',
+    imageAlt: 'Team collaborating on a technology project',
+    detail: 'PRACTICAL TECHNOLOGY / HUMAN SUPPORT',
   },
   {
     layout: 'metrics',
-    label: 'CONNECTED WORKFLOWS',
-    title: ['MAKE EVERY', 'PART WORK', 'TOGETHER'],
-    description: 'Bring tools and workflows together so work can move with less friction.',
-    image: 'https://images.unsplash.com/photo-1759143545924-0ea00615a054?auto=format&fit=crop&w=1200&q=85',
-    detailImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85',
-    imageAlt: 'Two colleagues collaborating around a laptop',
+    label: 'PAPI’S SYSTEMS',
+    title: ['BUILT FOR', 'THE WAY', 'YOU WORK', 'EVERY DAY'],
+    description: 'Practical technology, thoughtful support, and connected systems to help your business move forward.',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Colleagues working together with a laptop',
     detail: 'WORKFLOW / 02',
   },
   {
     layout: 'orbit',
-    label: 'SECURITY & RELIABILITY',
-    title: ['ROOTED IN', 'TRUST. READY', 'FOR CHANGE.'],
-    description: 'Make considered technology choices with security and reliability in mind.',
+    label: 'THE FUTURE STARTS WITH BETTER SYSTEMS',
+    title: ['START YOUR', 'PROJECT'],
+    description: 'We help connect the systems your business relies on. Start your next technology project with a clear plan and the right support.',
     image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85',
     detailImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=85',
     imageAlt: 'Close-up of an electronic circuit board',
@@ -32,9 +32,9 @@ const slides = [
   },
   {
     layout: 'color',
-    label: 'HUMAN SUPPORT',
-    title: ['MAKE WORK', 'FLOW BETTER', 'TOGETHER'],
-    description: 'Clear, practical help for the people who rely on your systems every day.',
+    label: 'PAPI’S SYSTEMS',
+    title: ['TECH SYSTEMS'],
+    description: 'Connected technology for the people and work behind your business.',
     image: 'https://images.unsplash.com/photo-1637855193741-56c0c01b1537?auto=format&fit=crop&w=1200&q=85',
     detailImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85',
     imageAlt: 'Colleagues working together at computers',
@@ -62,12 +62,12 @@ const slides = [
   },
   {
     layout: 'warm',
-    label: 'A CLEARER WAY FORWARD',
-    title: ['GROW YOUR', 'BUSINESS WITH', 'CONFIDENCE'],
-    description: 'Practical advice and systems that can grow with your ambitions.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85',
-    detailImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1000&q=85',
-    imageAlt: 'Business analytics displayed on a computer screen',
+    label: 'PAPI’S SYSTEMS',
+    title: ['Systems that', 'make work', 'feel simple'],
+    description: 'Connected tools, reliable infrastructure, and practical support, designed to work better together.',
+    image: 'https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1800&q=85',
+    detailImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85',
+    imageAlt: 'Server racks supporting connected business systems',
     detail: 'GROWTH / 07',
   },
 ];
@@ -78,7 +78,10 @@ const slides = [
       <div class={`slide-visual visual-${slide.layout}`} aria-hidden="true">
         <div class="slide-image slide-image-main"><img src={slide.image} alt="" fetchpriority={index === 0 ? 'high' : 'auto'} loading={index === 0 ? 'eager' : 'lazy'} /></div>
         <div class="slide-image slide-image-detail"><img src={slide.detailImage} alt="" loading="lazy" /></div>
+        {slide.layout === 'color' && <div class="color-gallery"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=85" alt="" loading="lazy" /><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=85" alt="" loading="lazy" /><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85" alt="" loading="lazy" /></div>}
+        {slide.layout === 'warm' && <div class="warm-tech-card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=85" alt="" loading="lazy" /><span>CONNECTED SYSTEMS / 03</span></div>}
         {slide.layout === 'orbit' && <div class="orbit-art"><i></i><i></i><i></i></div>}
+        {slide.layout === 'orbit' && <div class="systems-art"><div class="systems-art-main">{[0,1,2,3,4,5,6,7].map((angle) => <i style={`--petal-angle:${angle * 45}deg`}></i>)}</div><span class="systems-art-top"></span><span class="systems-art-corner"></span><span class="systems-art-side"></span></div>}
         {slide.layout === 'color' && <div class="color-panels"><span></span><span></span><span></span></div>}
         {slide.layout === 'metrics' && <div class="slide-facts"><span>01 <b>PLAN</b></span><span>02 <b>CONNECT</b></span><span>03 <b>SUPPORT</b></span></div>}
         <span class="visual-coordinate">A&nbsp; 00 — 0{index + 1}</span>
@@ -90,10 +93,20 @@ const slides = [
           <p class="slide-label">{slide.label}</p>
           {index === 0 ? <h1>{slide.title.map((line) => <span>{line}</span>)}</h1> : <h2>{slide.title.map((line) => <span>{line}</span>)}</h2>}
           <p class="slide-description">{slide.description}</p>
-          <a class="slide-link" href="/services">Explore our services <span aria-hidden="true">↗</span></a>
+          <a class="slide-link" href="/services">{slide.layout === 'warm' ? 'Explore our systems' : slide.layout === 'orbit' ? 'Learn more' : 'Explore our services'} <span aria-hidden="true">↗</span></a>
         </div>
         <span class="slide-detail">{slide.detail}<br />PAPI'S SYSTEMS</span>
       </div>
+      {index === 0 && <>
+        <a class="hero-discover" href="/services"><span aria-hidden="true">↘</span> Discover what’s possible</a>
+        <p class="hero-signoff">Technology that works<br />for the way you do.</p>
+        <a class="hero-scroll" href="#home-next" aria-label="Scroll to discover more"><span aria-hidden="true">↓</span></a>
+      </>}
+      {index === 6 && <>
+        <p class="warm-proof"><span aria-hidden="true">✦</span> Practical systems. Human support.</p>
+        <a class="warm-scroll" href="#home-next" aria-label="Scroll to discover more">Scroll <span aria-hidden="true">↓</span></a>
+      </>}
+      {index === 3 && <a class="color-action" href="/services">Explore our systems <span aria-hidden="true">↗</span></a>}
     </article>
   ))}
 
